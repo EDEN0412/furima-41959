@@ -119,7 +119,7 @@
     <ul class='item-lists'>
       <% @items.each do |item| %>
         <li class='list'>
-          <%= link_to item_path(item) do %>
+          <%# <%= link_to item_path(item) do %> %>
           <div class='item-img-content'>
             <% if item.image.attached? %>
               <%= image_tag item.image, class: "item-img" %>
@@ -145,7 +145,6 @@
           <% end %>
         </li>
       <% end %>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
 
       <% if @items.empty? %>
         <li class='list'>
