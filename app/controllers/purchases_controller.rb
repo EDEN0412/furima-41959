@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item
+  before_action :redirect_if_sold_or_own_item, only: [:index, :create]
 
   def index
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
@@ -38,5 +39,9 @@ class PurchasesController < ApplicationController
       card: purchase_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def redirect_if_sold_or_own_item
+    redirect_to root_path if @item.purchase.present? || current_user.id == @item.user.id
   end
 end

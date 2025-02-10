@@ -11,13 +11,11 @@
       <% else %>
         <%= image_tag "item-sample.png", class: "item-box-img" %>
       <% end %>
-      <%# 商品が売れている場合は、sold outを表示しましょう %>
-      <%# 
+      <% if @item.purchase %>
         <div class="sold-out">
           <span>Sold Out!!</span>
         </div>
-      %>
-      <%# //商品が売れている場合は、sold outを表示しましょう %>
+      <% end %>
     </div>
     <div class="item-price-box">
       <span class="item-price">
@@ -28,7 +26,7 @@
       </span>
     </div>
 
-    <% if user_signed_in? %>
+    <% if user_signed_in? && !@item.purchase %>
       <% if current_user.id == @item.user_id %>
         <%= link_to "商品の編集", edit_item_path(@item), data: { turbo: false }, class:"item-red-btn"%>
         <p class="or-text">or</p>
