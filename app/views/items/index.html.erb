@@ -126,13 +126,11 @@
             <% else %>
               <%= image_tag "item-sample.png", class: "item-img" %>
             <% end %>
-          <%# 商品が売れていればsold outを表示しましょう %>
-            <%# 
-                  <div class='sold-out'>
-                    <span>Sold Out!!</span>
-                  </div>
-            %>
-          <%# //商品が売れていればsold outを表示しましょう %>
+            <% if item.purchase %>
+              <div class='sold-out'>
+                <span>Sold Out!!</span>
+              </div>
+            <% end %>
           </div>
           <div class='item-info'>
             <h3 class='item-name'><%= item.name %></h3>

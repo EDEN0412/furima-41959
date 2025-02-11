@@ -19,7 +19,6 @@
   font-size: 22px;
 }
 
-/* 購入内容の表示 */
 .buy-item-info {
   height: 150px;
   border-bottom: 2px solid #f5f5f5;
@@ -60,9 +59,6 @@
   font-size: 12px;
 }
 
-/* /購入内容の表示 */
-
-/* 支払額の表示 */
 .item-payment {
   height: 120px;
   display: flex;
@@ -80,9 +76,6 @@
   font-size: 25px;
 }
 
-/* /支払額の表示 */
-
-/* カード情報の入力 */
 .credit-card-form {
   border-bottom: 2px solid #f5f5f5;
   margin-top: 15px;
@@ -125,9 +118,6 @@
   text-align: center;
 }
 
-/* /カード情報の入力 */
-
-/* 配送先の入力 */
 .shipping-address-form {
   margin-top: 15px;
 }
